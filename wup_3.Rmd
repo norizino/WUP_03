@@ -45,7 +45,24 @@ favstats(alcohol~Seat,data=ucdavis1)
 ```
 
 ## Inferential Tests
+# Inferential
+
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
+
+  P-value is 0.000116 is a very small number, meaning that is is unlikely that alcohol consumption in all three seat areas is the same. 
+  
+  
+## When significant follow up with TukeyHSD  
+
+```{r}
+plot(TukeyHSD(model1))
+```
+
+  The tukeyHSD plot shows that the people in the back drink a lot more than the people in the front, people in the middle drink a less than the back and the middle-front shows that there is no evidence in the average alcohol consumption.  
 
 ## Conclusions
 
-
+ The evidence shows that the most people who drink sit in the back seating area.
