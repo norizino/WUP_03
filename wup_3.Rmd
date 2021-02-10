@@ -1,7 +1,7 @@
 ---
 title: "Alcohol vs Seat choice"
-author: "Your Name"
-date: "Fall 2020"
+author: "Nicole Orizino"
+date: "spring 2021"
 output: html_document
 ---
 
@@ -28,6 +28,7 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 basicCN + geom_boxplot()
 ```
   
+  This graph shows the people who drink tend to sit in the back.
   
 ### get fancy  
 
@@ -35,7 +36,13 @@ basicCN + geom_boxplot()
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
 
+  This graph shows that the people who sit in the back seats seem to drink significantly more than the people who sit in the middle or front seats.
+
 ## Numerical Summarys 
+
+```{r}
+favstats(alcohol~Seat,data=ucdavis1)
+```
 
 ## Inferential Tests
 
